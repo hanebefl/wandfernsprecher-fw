@@ -1,6 +1,10 @@
 
+
+
 ifndef VIRTUAL_ENV
-	source .venv/bin/activate
+    # how to make this work?
+    [ -d .venv ] || python -m venv .venv ;
+    source .venv/bin/activate
 endif
 
 
