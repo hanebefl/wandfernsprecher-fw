@@ -1,6 +1,5 @@
 from machine import Pin, SLEEP, DEEPSLEEP
 from time import sleep, ticks_ms
-from _thread import allocate_lock
 
 #from machine.Pin import PULL_UP, IRQ_FALLING, IRQ_RISING, IN
 #from copy import deepcopy
@@ -14,7 +13,7 @@ class Dial:
 
     def __init__(self, nsa:int, nsi:int):
         self._buf=[]
-        self._available = False
+        self._new_number_available = False
         self._new_num = None
         self._nsi_count:int = None
         # NSA pin: when the dial starts to turn, this pin stays low until dial returns to idle position
@@ -42,10 +41,10 @@ class Dial:
                 self.printbuf += "a1 "
                 if 1 <= self._nsi_count <= 9:
                     self._new_num = self._nsi_count
-                    self._available = True
+                    self._new_number_available = True
                 elif self._nsi_count == 10:
                     self._new_num = 0
-                    self._available = True
+                    self._new_number_available = True
                 else:
                     print(f"ERR: {self._nsi_count}")
             else:           # dial turn start
@@ -73,15 +72,16 @@ class Dial:
                 self.printbuf += "i0 "
 
     def getNum(self) -> list:
-        if len(self.printbuf) > 0:
-            print(self.printbuf, end="")
-            self.printbuf = ""
         num = self._buf.pop(0) if len(self._buf) > 0 else None
         return num
 
 
     def run(self) -> None:
-        if self._available:
+        if len(self.printbuf) > 0:
+            #print(self.printbuf, end="")
+            self.printbuf = ""
+        if self._new_number_available:
             self._buf.append(self._new_num)
-            self._available = False
+            self._new_number_available = False
+            return True
 
