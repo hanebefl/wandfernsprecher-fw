@@ -1,107 +1,141 @@
 
 import time
-from machine import UART
-
+from logging import debug, info, warning, error
+from .sim800_serial import Sim800Serial
 
 class Sim800:
-    class _STATE:
-        _STATES = {
-            "PWR_UP",
-            "IDLE",
-            "IDLE_CONN"
-            "DIALING",
-            "IN_CALL",
-        }
-        def __init__(self, state = None):
-            if state is not None:
-                if state in self._STATES:
-                    self._state = state
-            else:
-                self._state = "PWR_UP"
-        def update(self, state):
-            if state in self._STATES:
-                self._state = state
-            else:
-                raise ValueError("Unknown state: ", state)
-            print("State updated: ", self._state)
-        def get(self) -> str:
-            return self._state
 
     def __init__(self):
-        self._port = UART(1, baudrate=115200, tx=21, rx=20)
-        self._state = self._STATE()
-        self._input_buffer = b""
-        self._input_lines = []
+        self._port = Sim800Serial(1, baudrate=115200, tx=21, rx=20)
+        self._state = "POWER_UP"
         self._last_cpas_check_ts = 0
+        self.pinok = False
+    
+
+    def _state_functions(self, state:str=None, keys:bool=False):
+    
+        fuctions_dict = {
+            "POWER_UP":     self._run_power_up,
+            "OFFLINE":      self._run_offline,
+            "CONNECTING":   self._run_connecting,
+            "ONLINE":       self._run_online,
+            "DIALING":      self._run_dialing,
+            "RINGING":      self._run_ringing,
+            "IN_CALL":      self._run_in_call,
+        }
+        if keys:
+            return fuctions_dict.keys()
+        try:
+            retval = fuctions_dict[state]
+        except KeyError as e:
+            raise AttributeError(f"'{state} not a valid value for state")
+        return retval
+
+    @property
+    def state(self):
+        return self._state
+
+    @state.setter
+    def state(self, new_state):
+        if new_state in self._state_functions(keys=True):
+            debug(f"{self.state} -> {new_state}")
+            self._state = new_state
+        else:
+            raise AttributeError(f"'{new_state} not a valid value for state")
+    
+    @state.deleter
+    def state(self):
+        raise AttributeError("'state' cannot be deleted")
 
 
     def _write(self, data:str):
         self._port.write(data + '\r\n')
-        print(">  ", data)
+        info(f">  {data}")
+    
+    def _transaction(self, data:str):
+        info(f">> {data}")
+        return self._port.transaction(data + '\r\n')
+    
+    def send_command(self, data:str):
+        self._transaction(data)
+        time.sleep(0.1) # allow time for answer
+        start = time.monotonic_ns()
 
-    def init(self):
-        inbuf = ""
-        send_at_ts = 0 
-        while 1:
-            if (time.ticks_ms() - send_at_ts > 1000):
-                send_at_ts = time.ticks_ms()
-                self._write("AT")
-            if self.run():
-                if len(self._input_lines) > 1:
-                    i = self._input_lines.index(b'AT')
-                    if self._input_lines[i+1] == b'OK':
-                        self._input_lines = self._input_lines[2:]
-                        break
-                    elif self._input_lines[i+1] == b'AT':
-                        self._input_lines = self._input_lines[1:]
-                    print(self._input_lines)
+    def power_off(self):
+        self._transaction("AT+CPOWD=1")
 
-        self._state.update("IDLE")
-            
     def run(self) -> bool:
-        if self._state.get() == "IDLE" and time.ticks_ms() - self._last_cpas_check_ts > 10000:
-            self._last_cpas_check_ts = time.ticks_ms()
-            self._cpas()
-        while self._port.any():
-            c = self._port.read(1)
-            self._input_buffer += c
-        if b"\n" in self._input_buffer:
-            retval = self._parse_input_buffer()
-            self._handle_input_lines()
-            return retval
+        self._port.run()
+        handle_state = self._state_functions(self.state)
+        handle_state()
+        if "RING" in self._port._input_buffer:
+            return True
         return False
     
-    def _parse_input_buffer(self) -> bool:
-        retval = False
-        self._input_buffer = self._input_buffer.replace(b"\r", b"")
-        while b"\n" in self._input_buffer:
-            i0 = self._input_buffer.find(b'\n')
-            #print(i0)
-            line = self._input_buffer[:i0]
-            #print(self._input_buffer)
-            self._input_buffer = self._input_buffer[i0+1:]
-            #print(self._input_buffer)
-            if len(line) > 0:
-                self._input_lines.append(line)
-                print("<< ", line, len(self._input_lines))
-                retval = True
-        return True
+    def ringing(self) -> bool:
+        if "RING" in self._port._input_buffer():
+            del self._port._input_buffer[self._port._input_buffer.index("RING")]
+            return True
+        return False
 
-    def _handle_input_lines(self):
-        new_input_lines = []
-        for i,  line in enumerate(self._input_lines):
-            if line[:2] == b"AT":
-                # echo, ignore
+
+    ###############################
+    # state specific run handlers #
+    ###############################
+
+    def _run_power_up(self) -> None:
+        # -> OFFLINE
+        if not self._transaction("AT"):
+            return
+        if not self._transaction("ATE0"): # turn off echo 
+            return
+        if not self._transaction("AT+CFUN=1"): # set modem to full functionality
+            return
+        # fallthrough, modem is ready
+        self.state = "OFFLINE"
+
+    def _run_offline(self) -> None:
+        # -> CONNECTING
+        self.check_pin()
+        pass
+
+
+    def check_pin(self):
+        if not self.pinok:
+            if self._transaction("AT+CPIN=2538"):
+                self.pinok = True
                 pass
-            elif line[:5] == b"+CPAS":
-                print("CPAS", line[7])
-            elif line == b"OK"
             else:
-                new_input_lines.append(line)
-        self._input_lines = new_input_lines
-            
-        if b"+CPAS" in self._input_lines:
-            pass
+                error("no pin")
+
+    def _run_connecting(self) -> None:
+        # -> ONLINE
+        # -> OFFLINE
+        pass
+
+    def _run_online(self) -> None:
+        # -> OFFLINE
+        # -> DIALING
+        # -> RINGING
+        if time.ticks_ms() - self._last_cpas_check_ts > 10000:
+            self._last_cpas_check_ts = time.ticks_ms()
+            self._cpas() # TODO: go offline if CPAS fails
+        pass
+
+    def _run_dialing(self) -> None:
+        # -> IN_CALL
+        # -> ONLINE
+        pass
+
+    def _run_ringing(self) -> None:
+        # -> IN_CALL
+        # -> ONLINE
+        pass
+
+    def _run_in_call(self) -> None:
+        # -> ONLINE
+        pass
+
 
     def _cpas(self) -> None:
         self._write("AT+CPAS")
@@ -109,9 +143,9 @@ class Sim800:
     def check_version(self):
         self._write("AT+CGMR")
     
-    def incoming_call(self) -> bool:
-        if b"RING" in self._input_lines:
-            i = self._input_lines.index(b"RING")
-            del self._input_lines[i]
-            return True
-        return False
+    # def incoming_call(self) -> bool:
+    #     if b"RING" in self._input_lines:
+    #         i = self._input_lines.index(b"RING")
+    #         del self._input_lines[i]
+    #         return True
+    #     return False
