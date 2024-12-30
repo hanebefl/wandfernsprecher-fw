@@ -1,0 +1,326 @@
+
+abheben, wählen, nach 4. Nummer Wählton
+
+
+b'\r\n'
+b'+CPAS: 0\r\n'
+2000-1-1 1:18:33 INFO     AT+STTONE=1,1,60000
+
+None
+None
+2000-1-1 1:18:33 INFO     dialS
+2000-1-1 1:18:33 DEBUG    check dialS False,False,False
+2000-1-1 1:18:33 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:34 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:35 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:36 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:37 DEBUG    Pin(10)
+2000-1-1 1:18:37 DEBUG    Aa0 
+2000-1-1 1:18:37 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:38 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Ii1 
+2000-1-1 1:18:39 DEBUG    check dialS False,False,False
+2000-1-1 1:18:39 DEBUG    Pin(7)
+2000-1-1 1:18:39 DEBUG    Pin(10)
+2000-1-1 1:18:40 DEBUG    Ii1 Aa1 
+2000-1-1 1:18:40 DEBUG    check dialS True,False,False
+2000-1-1 1:18:40 DEBUG     8
+2000-1-1 1:18:40 INFO     AT+STTONE=0
+
+b'\r\n'
+b'+STTONE: '
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:40 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    Pin(10)
+2000-1-1 1:18:41 DEBUG    Aa0 
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:41 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    Pin(7)
+2000-1-1 1:18:42 DEBUG    Ii1 
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    Pin(7)
+2000-1-1 1:18:42 DEBUG    Pin(10)
+2000-1-1 1:18:42 DEBUG    Ii1 Aa1 
+2000-1-1 1:18:42 DEBUG    check dialS True,False,False
+2000-1-1 1:18:42 DEBUG     82
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:42 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:43 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    Pin(10)
+2000-1-1 1:18:44 DEBUG    Aa0 
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:44 DEBUG    check dialS False,False,False
+2000-1-1 1:18:45 DEBUG    check dialS False,False,False
+2000-1-1 1:18:45 DEBUG    Pin(7)
+2000-1-1 1:18:45 DEBUG    Ii1 
+2000-1-1 1:18:45 DEBUG    check dialS False,False,False
+2000-1-1 1:18:45 DEBUG    Pin(7)
+2000-1-1 1:18:45 DEBUG    Ii1 
+2000-1-1 1:18:45 DEBUG    check dialS False,False,False
+2000-1-1 1:18:45 DEBUG    Pin(7)
+2000-1-1 1:18:45 DEBUG    Ii1 
+2000-1-1 1:18:45 DEBUG    check dialS False,False,False
+2000-1-1 1:18:45 INFO     callS
+2000-1-1 1:18:45 INFO     ATD 82;
+
+2000-1-1 1:18:45 DEBUG    Pin(7)
+b'\r\n'
+b'OK\r\n'
+2000-1-1 1:18:45 DEBUG    Pin(7)
+2000-1-1 1:18:45 DEBUG    Ii1 Ii1 
+2000-1-1 1:18:45 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:45 DEBUG    Pin(10)
+2000-1-1 1:18:45 DEBUG    Aa1 
+2000-1-1 1:18:45 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:45 INFO     AT+CLDTMF=3,"5"
+
+b'\r\n'
+b'OK'
+2000-1-1 1:18:45 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:45 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:45 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    Pin(10)
+2000-1-1 1:18:46 DEBUG    Aa0 
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:46 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    Pin(7)
+2000-1-1 1:18:47 DEBUG    Pin(7)
+2000-1-1 1:18:47 DEBUG    Ii1 I
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    Pin(7)
+2000-1-1 1:18:47 DEBUG    Ii1 
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    Pin(7)
+2000-1-1 1:18:47 DEBUG    Ii1 
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:47 DEBUG    Pin(7)
+2000-1-1 1:18:47 DEBUG    Ii1 
+2000-1-1 1:18:47 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    Pin(7)
+2000-1-1 1:18:48 DEBUG    Ii1 
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    Pin(10)
+2000-1-1 1:18:48 DEBUG    Aa1 
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 INFO     AT+CLDTMF=3,"5"
+
+b'\r\n'
+b'OK\r'
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:48 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:49 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:49 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:49 DEBUG    check callS {dial},{gs},{es}
+2000-1-1 1:18:49 DEBUG    RING_OFF
+2000-1-1 1:18:49 INFO     homeS
+2000-1-1 1:18:49 INFO     AT+STTONE=1,1,60000
+
+None
+None
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:49 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:50 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:51 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:52 DEBUG    check homeS False,False,False
+2000-1-1 1:18:53 DEBUG    check homeS False,True,False
+2000-1-1 1:18:53 DEBUG    gs
+2000-1-1 1:18:53 DEBUG    gs_switch 1
+2000-1-1 1:18:53 INFO     AT+STTONE=0
+
+b'\r\n'
+b'+STTONE: '
+2000-1-1 1:18:53 DEBUG    check homeS False,False,False
+2000-1-1 1:18:53 DEBUG    check homeS False,False,False
+2000-1-1 1:18:53 DEBUG    check homeS False,False,False
+2000-1-1 1:18:53 DEBUG    check homeS False,True,False
+2000-1-1 1:18:53 DEBUG    gs
+2000-1-1 1:18:53 DEBUG    gs_switch 0
+2000-1-1 1:18:53 DEBUG    set_call_cb()
+2000-1-1 1:18:53 INFO     AT+CPAS
+
+b'\r\n'
+b'+CPAS: 0\r\n'
+2000-1-1 1:18:53 INFO     AT+STTONE=1,1,60000
+
+None
+None
+2000-1-1 1:18:53 INFO     dialS
+2000-1-1 1:18:53 DEBUG    check dialS False,False,False
+2000-1-1 1:18:53 DEBUG    check dialS False,False,False
+2000-1-1 1:18:53 DEBUG    check dialS False,False,False
+2000-1-1 1:18:53 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:54 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:55 DEBUG    check dialS False,False,False
+2000-1-1 1:18:56 DEBUG    check dialS False,False,False
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+  File "phoneui.py", line 398, in <module>
+KeyboardInterrupt: 
+MicroPython v1.24.0 on 2024-10

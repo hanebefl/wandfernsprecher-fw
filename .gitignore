@@ -1,2 +1,4 @@
 out/*
 !out/.gitkeep
+out2/*
+!out2/.gitkeep
