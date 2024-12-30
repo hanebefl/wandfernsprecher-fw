@@ -13,7 +13,6 @@ pins = {
     9: "BOOT",
     10: "NSA"
 }
-s = 1 / 50
 
 a = Pin(5, Pin.OUT)
 a.off()
