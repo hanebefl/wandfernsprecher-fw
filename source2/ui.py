@@ -1,5 +1,6 @@
 # User interface classes for LCD160CR
 # MIT License; Copyright (c) 2017 Jeffrey N. Magee
+# MIT License; Copyright (c) 2025 hanebefl (https://github.com/hanebefl)
 
 from time import ticks_ms
 #from lcd160cr import LCD160CR

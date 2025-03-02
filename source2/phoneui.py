@@ -1,4 +1,5 @@
 # MIT License; Copyright (c) 2017 Jeffrey N. Magee
+# MIT License; Copyright (c) 2025 hanebefl (https://github.com/hanebefl)
 
 """
 Combines User Interface with SIM800L module.
@@ -39,7 +40,7 @@ def do_gs_switch(t):
     global wokenby
     wokenby = 1
 
-def do_phonering(t):
+def w(t):
     global wokenby
     wokenby = 2
 

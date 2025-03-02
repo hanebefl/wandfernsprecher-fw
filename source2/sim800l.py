@@ -1,6 +1,6 @@
 # Driver for SIM800L module (using AT commands)
 # MIT License; Copyright (c) 2017 Jeffrey N. Magee
-
+# MIT License; Copyright (c) 2025 hanebefl (https://github.com/hanebefl)
 
 #import pyb
 import math
