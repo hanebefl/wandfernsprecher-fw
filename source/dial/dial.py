@@ -19,10 +19,10 @@ class Dial:
         self._nsi_count:int = 0
         # NSA pin: when the dial starts to turn, this pin stays low until dial returns to idle position
         self._nsa = Pin(nsa, mode=Pin.IN, pull=Pin.PULL_UP)
-        self._nsa_irq = self._nsa.irq(self._pin_irq, Pin.IRQ_FALLING | Pin.IRQ_RISING, wake=SLEEP|DEEPSLEEP)
+        self._nsa_irq = self._nsa.irq(handler=self._pin_irq, trigger = Pin.IRQ_FALLING | Pin.IRQ_RISING, wake=SLEEP|DEEPSLEEP)
         # NSI pin: pulses for the dialed number. pulled to low while idle, so 
         self._nsi = Pin(nsi, mode=Pin.IN, pull=Pin.PULL_UP)
-        self._nsi_irq = self._nsi.irq(self._pin_irq, Pin.IRQ_RISING, wake=SLEEP|DEEPSLEEP)
+        self._nsi_irq = self._nsi.irq(handler = self._pin_irq, trigger = Pin.IRQ_RISING, wake=SLEEP|DEEPSLEEP)
         self.printbuf = ""
         self._last_nsi_dn = 0
         self._last_nsi_up = 0
@@ -31,10 +31,11 @@ class Dial:
         info("Dial inited")
 
     def _pin_irq(self, pin:Pin):
+        debug(f"{pin}")
         if pin == self._nsa:
             value = pin.value()
             self.printbuf += "A"
-            if not value: # dial turn end
+            if value: # dial turn end
                 t = ticks_ms()
                 if (t - self._last_nsa_up < self._MIN_NSA_UP_ms):
                     return
@@ -74,17 +75,21 @@ class Dial:
                 self._last_nsi_dn = t
                 self.printbuf += "i0 "
 
-    def getNum(self) -> list:
+    def getNum(self) -> int:
         num = self._buf.pop(0) if len(self._buf) > 0 else None
         return num
+    
+    def clear(self) -> None:
+        self._buf.clear()
 
 
-    def run(self) -> None:
+    def run(self) -> bool:
         if len(self.printbuf) > 0:
-            #print(self.printbuf, end="")
+            debug(self.printbuf)
             self.printbuf = ""
         if self._new_number_available:
             self._buf.append(self._new_num)
             self._new_number_available = False
             return True
+        return False
 
