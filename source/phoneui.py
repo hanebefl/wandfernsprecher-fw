@@ -55,11 +55,11 @@ def get_gs_value() -> int:
     global gs_switch_value
     return gs_switch_value
 
-phonering  = Pin(pinout["ES1"], mode=Pin.IN, pull=Pin.PULL_UP)
+phonering  = Pin(pinout["RING"], mode=Pin.IN, pull=Pin.PULL_UP)
 ring_irq   = phonering.irq(do_phonering, Pin.IRQ_FALLING, wake=SLEEP|DEEPSLEEP)
 #esp32.wake_on_gpio(pin=phonering, level=esp32.WAKEUP_ANY_LOW)
 
-es_button = Pin(pinout["ES2"], mode=Pin.IN, pull=Pin.PULL_UP)
+es_button = Pin(pinout["ES"], mode=Pin.IN, pull=Pin.PULL_UP)
 es_button_hist = es_button.value()
 es_button_value = None
 def get_es_value() -> int:
