@@ -40,7 +40,7 @@ def do_gs_switch(t):
     global wokenby
     wokenby = 1
 
-def w(t):
+def do_phonering(t):
     global wokenby
     wokenby = 2
 
