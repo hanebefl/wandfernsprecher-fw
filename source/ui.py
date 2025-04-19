@@ -431,7 +431,7 @@ class DialScreen(Screen):
         def set_shutdown_cb(self, fn):
             self.shutdown_cb = fn
         def check(self, dial:bool, gs:bool, es:bool):
-            debug(f"check dialS {dial},{gs},{es}")
+            #debug(f"check dialS {dial},{gs},{es}")
             if gs:
                 debug(f"dialS gs")
                 if self.gs_switch is not None:
@@ -559,7 +559,7 @@ class CallScreen(Screen):
             self.dtmf_cb = fn
         def check(self, dial:bool, gs:bool, es:bool):
             if self.ans:
-                debug(f"check incoS {dial},{gs},{es}")
+                #debug(f"check incoS {dial},{gs},{es}")
                 if gs:
                     if not self.gs_switch():  # GS lifted up
                         if self.answer_cb:
@@ -571,7 +571,7 @@ class CallScreen(Screen):
                     # TODO: maybe mute ringing?
                     pass
             else:
-                debug(f"check callS {dial},{gs},{es}")
+                #debug(f"check callS {dial},{gs},{es}")
                 if gs:
                     if self.gs_switch(): # GS placed down
                         if self.hangup_cb:
@@ -647,7 +647,7 @@ class HomeScreen(Screen):
             screen.actionable(self)
         
         def check(self, dial:bool, gs:bool, es:bool):
-            debug(f"check homeS {dial},{gs},{es}")
+            #debug(f"check homeS {dial},{gs},{es}")
             # dial: nothing to do
             # gs: liftoff: goto setcall
             if gs:
