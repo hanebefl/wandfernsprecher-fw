@@ -168,8 +168,10 @@ def incomingclip():
     pass
 
 def no_carrier():
+    warning("no carrier")
     mute_bells(None)
     switch_to(homeS)
+    dialS.set_number(' ')
     if not get_gs_value():
         phone.play_tone(1)
     clear_phone_sleep_mode()
